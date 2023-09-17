@@ -1,0 +1,112 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Sorting.gd" type="Script" id=1]
+[ext_resource path="res://Image (17).png" type="Texture" id=2]
+[ext_resource path="res://Image (5).png" type="Texture" id=4]
+[ext_resource path="res://Image (7).png" type="Texture" id=5]
+[ext_resource path="res://Image (8).png" type="Texture" id=6]
+[ext_resource path="res://Image (6).png" type="Texture" id=7]
+[ext_resource path="res://Image (9).png" type="Texture" id=8]
+[ext_resource path="res://Image (13).png" type="Texture" id=9]
+[ext_resource path="res://Image (11).png" type="Texture" id=10]
+
+[node name="Sorting" type="Control"]
+script = ExtResource( 1 )
+
+[node name="Image(11)" type="Sprite" parent="."]
+texture = ExtResource( 10 )
+centered = false
+
+[node name="Image(17)" type="Sprite" parent="."]
+position = Vector2( 760, 411 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 2 )
+
+[node name="Recycle" type="Button" parent="."]
+margin_left = 78.0
+margin_top = 52.0
+margin_right = 283.0
+margin_bottom = 385.0
+flat = true
+
+[node name="Trash" type="Button" parent="."]
+margin_left = 752.0
+margin_top = 58.0
+margin_right = 957.0
+margin_bottom = 391.0
+flat = true
+
+[node name="Compost" type="Button" parent="."]
+margin_left = 433.0
+margin_top = 52.0
+margin_right = 638.0
+margin_bottom = 385.0
+flat = true
+
+[node name="Question" type="Label" parent="."]
+margin_left = 120.0
+margin_top = 526.0
+margin_right = 383.0
+margin_bottom = 540.0
+rect_scale = Vector2( 3, 3 )
+text = "Which bin should this item be thrown in?"
+
+[node name="TryAgain" type="Label" parent="."]
+visible = false
+margin_left = 119.0
+margin_top = 468.0
+margin_right = 382.0
+margin_bottom = 482.0
+rect_scale = Vector2( 3, 3 )
+text = "Try again!"
+align = 1
+
+[node name="Correct" type="Label" parent="."]
+visible = false
+margin_left = 119.0
+margin_top = 468.0
+margin_right = 382.0
+margin_bottom = 482.0
+rect_scale = Vector2( 3, 3 )
+text = "Correct!"
+align = 1
+
+[node name="StyrofoamCup" type="Sprite" parent="."]
+position = Vector2( 751.25, 398.75 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 4 )
+
+[node name="Pizzabox" type="Sprite" parent="."]
+position = Vector2( 761.75, 393.25 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 7 )
+
+[node name="Fork" type="Sprite" parent="."]
+position = Vector2( 761.75, 393.25 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 5 )
+
+[node name="BananaPeel" type="Sprite" parent="."]
+position = Vector2( 761.75, 393.25 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 6 )
+
+[node name="WaterBottle" type="Sprite" parent="."]
+position = Vector2( 761.75, 393.25 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 8 )
+
+[node name="CrumpledPaper" type="Sprite" parent="."]
+position = Vector2( 762.25, 393.75 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 9 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 511, 294 )
+current = true
+zoom = Vector2( 0.29, 0.29 )
+
+[connection signal="mouse_entered" from="Recycle" to="." method="_on_Recycle_mouse_entered"]
+[connection signal="pressed" from="Recycle" to="." method="_on_Recycle_pressed"]
+[connection signal="pressed" from="Trash" to="." method="_on_Trash_pressed"]
+[connection signal="pressed" from="Compost" to="." method="_on_Compost_pressed"]
